@@ -7,7 +7,7 @@ import { UserInterface } from '@/shared/types/users';
 import hooks from './service.hooks';
 
 const modelName = 'User';
-const servicePath = 'user';
+const servicePath = 'users';
 
 export class User extends BaseModel {
   // Required for $FeathersVuex plugin to work after production transpile.

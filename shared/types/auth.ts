@@ -5,4 +5,5 @@ export default interface AuthState {
 export interface LoginPayload {
   email: string;
   password: string;
+  strategy: string;
 }

@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 
-const requireRoute = require.context('../features/', true, /\.routes.ts$/);
-const allRoutes = requireRoute.keys().map((path) => requireRoute(path).default);
+import Home from './home';
+import Auth from './auth';
 
 Vue.use(VueRouter);
 
@@ -16,7 +16,8 @@ export const routes = [
     name: 'Index',
     redirect: () => '/home',
   },
-  ...allRoutes.reduce((acc, route) => [...acc, ...route(lazyLoad)], []),
+  ...Home(lazyLoad),
+  ...Auth(lazyLoad),
   {
     path: '/unauthenticated',
     name: 'Unauthenticated',

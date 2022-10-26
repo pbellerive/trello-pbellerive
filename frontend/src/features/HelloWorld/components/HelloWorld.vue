@@ -6,7 +6,7 @@
 
     <v-btn
       color="error"
-      onclick="crashMe"
+      @click="crash"
     >
       Crash Me!!!
     </v-btn>
@@ -16,8 +16,8 @@
       check out the
       <a
         href="https://cli.vuejs.org"
-        target="_blank"
         rel="noopener"
+        target="_blank"
       >
         vue-cli documentation
       </a>.
@@ -29,8 +29,8 @@
       <li>
         <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           babel
         </a>
@@ -38,8 +38,8 @@
       <li>
         <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           eslint
         </a>
@@ -52,8 +52,8 @@
       <li>
         <a
           href="https://vuejs.org"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           Core Docs
         </a>
@@ -61,8 +61,8 @@
       <li>
         <a
           href="https://forum.vuejs.org"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           Forum
         </a>
@@ -70,8 +70,8 @@
       <li>
         <a
           href="https://chat.vuejs.org"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           Community Chat
         </a>
@@ -79,8 +79,8 @@
       <li>
         <a
           href="https://twitter.com/vuejs"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           Twitter
         </a>
@@ -88,8 +88,8 @@
       <li>
         <a
           href="https://news.vuejs.org"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           News
         </a>
@@ -102,8 +102,8 @@
       <li>
         <a
           href="https://router.vuejs.org"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           vue-router
         </a>
@@ -111,8 +111,8 @@
       <li>
         <a
           href="https://vuex.vuejs.org"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           vuex
         </a>
@@ -120,8 +120,8 @@
       <li>
         <a
           href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           vue-devtools
         </a>
@@ -129,8 +129,8 @@
       <li>
         <a
           href="https://vue-loader.vuejs.org"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           vue-loader
         </a>
@@ -138,8 +138,8 @@
       <li>
         <a
           href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
           rel="noopener"
+          target="_blank"
         >
           awesome-vue
         </a>
@@ -149,16 +149,17 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from '@vue/composition-api';
+
+export default defineComponent({
   name: 'HelloWorld',
 
   props: {
     msg: String,
   },
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   setup() {
-    const crashMe = () => {
+    const crash = () => {
       const t = 0;
       // This will crash the app!!!
       // eslint-disable-next-line no-console
@@ -166,24 +167,27 @@ export default {
     };
 
     return {
-      crashMe,
+      crash,
     };
   },
-};
+});
 </script>
 
 <style scoped>
 h3 {
   margin: 40px 0 0;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
   color: #42b983;
 }
