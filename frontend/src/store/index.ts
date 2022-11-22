@@ -3,11 +3,16 @@ import Vuex from 'vuex';
 import { FeathersVuex } from '@/feathers-client';
 import RootState from './interfaces';
 
+const featureName = (str) => {
+  const s = str.split('/');
+  return s[s.length - 2].toLowerCase();
+};
+
 // Store Modules
 
 const requireModule = require.context('../features/', true, /\.module.ts$/);
 const modules = requireModule.keys()
-  .map((path) => ({ [path]: requireModule(path).default }))
+  .map((path) => ({ [featureName(path)]: requireModule(path).default }))
   .reduce((acc, mod) => ({ ...acc, ...mod }), {});
 
 // Service Models
