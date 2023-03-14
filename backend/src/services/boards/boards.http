@@ -1,0 +1,10 @@
+POST http://localhost:3030/boards
+Content-Type: application/json
+
+{
+  "name": "test 2"
+}
+
+###
+GET http://localhost:3030/boards/641093b937005ed366ebb66d
+Content-Type: application/json

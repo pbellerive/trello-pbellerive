@@ -5,7 +5,8 @@
     <scripts>
       <script value="dev" />
     </scripts>
-    <node-interpreter value="node" />
+    <node-interpreter value="wsl://Ubuntu@/home/pbellerive/.nvm/versions/node/v14.21.3/bin/node" />
+    <package-manager value="\home\pbellerive\.nvm\versions\node\v14.21.3\bin\yarn" />
     <envs />
     <method v="2" />
   </configuration>
