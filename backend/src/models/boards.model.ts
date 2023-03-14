@@ -2,8 +2,8 @@
 //
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
-import { Application } from '../declarations';
 import { Model, Mongoose } from 'mongoose';
+import { Application } from '../declarations';
 
 export default function (app: Application): Model<any> {
   const modelName = 'boards';
@@ -11,7 +11,8 @@ export default function (app: Application): Model<any> {
   const { Schema } = mongooseClient;
   const schema = new Schema({
     name: { type: String, required: true, unique: true },
-    bgUrl: { type: String, required: false }
+    bgUrl: { type: String, required: false },
+    author: { type: String, required: false }
   }, {
     timestamps: true
   });
